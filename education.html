@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Kyle Larkin - Degrees</title>
+        <link rel="stylesheet" type="text/css" href="./css/edu_styles.css" />
+        <meta name="description" content="interactive display of Kyle Larkin's educational background" />
+        <meta name="keywords" content="Larkin, education, degrees, interactive" />
+        <meta name="robots" content="nofollow" />
+    </head>
+    <body>
+        <header>
+            <nav class="site_nav">
+                <a href="./index.html">Author</a>
+                <a href="./education.html">Education</a>
+                <a href="./ancestry.html">Ancestry</a>
+                <a href="./satellites.html">Satellites</a>
+                <a href="./models.html">Models</a>
+            </nav>            
+            <h1>My Degrees</h1>
+        </header>
+        <hr />
+        <div id="education">
+            <figure>
+                <img src="./images/professional_pic_cropped_mid.jpg" alt="the author's professional portrait" />
+            </figure>
+            <!--A table of output, which updates based on the button clicks. -->
+            <table class="degrees">
+                <thead>
+                    <tr>
+                        <th>School:</th>
+                        <th class="school"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Program:</th>
+                        <th class="program"></th>
+                    </tr>
+                    <tr>
+                        <th>Degree:</th>
+                        <th class="degree_name">Please select by degree below.</th>
+                    </tr>
+                    <tr>
+                        <th>Year:</th>
+                        <th class="year"></th>
+                    </tr>                 
+                </tbody>
+            </table>
+        </div>
+            <!--3 buttons to click, each will fill the fields above w/ different stuff from the JSON.-->
+        <button id="button_1" class="live">Associate of Arts</button>
+        <button id="button_2" class="live">Bachelor of Science</button>
+        <button id="button_3" class="live">Master of Science</button>
+        <hr />
+        <footer>
+            <address>
+                <p><a href="mailto:kyle.larkin@ollam.org">kyle.larkin@ollam.org</a></p>
+            </address>
+        </footer>
+        <script src="./js/jquery-3.6.0.js"></script>
+        <script src="./js/degrees.js"></script>
+    </body>
+</html>
