@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Satellite Image Comparison Tool</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+        <meta name="description" content="interactive satellite comparison tool" />
+        <meta name="keywords" content="weather, interactive, satellite" />
+        <meta name="robots" content="nofollow" />
+        <!--Import Vue.js-->
+        <script src="https://unpkg.com/vue@3"></script>
+    </head>
+    <body id="content">
+        <header>
+            <nav class="site_nav">
+                <a href="./index.html">Author</a>
+                <a href="./education.html">Education</a>
+                <a href="./ancestry.html">Ancestry</a>
+                <a href="./satellites.html">Satellites</a>
+                <a href="./models.html">Models</a>
+            </nav>
+            <h1>Satellite Comparison Tool</h1>
+        </header>
+        <hr />
+        <div id="satellites_app">
+            <!--A hi-res static weather image for multiple time-steps, orgainzed by time before "present" time, though for this assignment, the images are static. Ideally data would be updating dynamically, but I don't have that set up. The image responds to buttons below to change time steps. Hovering over the image with the mouse switches to visible imagery for a quick comparison of different image bands.-->
+            <img id="sat_map" v-bind:src="onHover()" @mouseover="hover = true" @mouseleave="hover = false" alt="Satellite weather map" />
+            <h4 id="sat_header">Infrared and Visible Satellite Imagery</h4>
+            <nav id="timeline">
+                <button id="button_1" class="live" v-on:click="setSource(24)">-24</button>
+                <button id="button_2" class="live" v-on:click="setSource(18)">-18</button>
+                <button id="button_3" class="live" v-on:click="setSource(12)">-12</button>
+                <button id="button_4" class="live" v-on:click="setSource('06')">-06</button>
+                <button id="button_5" class="live" v-on:click="setSource('00')">latest</button>            
+            </nav>
+        </div>
+    </body>
+    <hr />
+    <footer>
+        <address>
+            <p><a href="mailto:kyle.larkin@ollam.org">kyle.larkin@ollam.org</a></p>
+        </address>
+    </footer>
+    <!--Import app-->
+    <script src="./js/satellites.js"></script>
+    <!--Mount app-->
+    <script>
+        const mountedApp = satapp.mount('#satellites_app')
+    </script>
+</html>
